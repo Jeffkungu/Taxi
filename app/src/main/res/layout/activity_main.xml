@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Trip Search"
+        android:textSize="@dimen/_25ssp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        app:layout_constraintBottom_toTopOf="@id/borderLine1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/borderLine1"
+        android:orientation="horizontal"
+        android:layout_width="@dimen/_280sdp"
+        android:layout_height="@dimen/_2sdp"
+        android:layout_marginTop="@dimen/_120sdp"
+        android:background="@color/colorBlack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/containerKey"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="start"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_12sdp"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginRight="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/borderLine1"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Keyword"
+            android:textSize="@dimen/_14ssp"
+            android:gravity="center"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_25sdp"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/_2sdp"
+            android:background="@drawable/custom_tool_bar">
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Enter key"
+                android:layout_gravity="center"
+                android:background="@drawable/custom_edit_text"
+                android:textSize="@dimen/_11ssp"
+                />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/containerSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginLeft="@dimen/_12sdp"
+        android:layout_marginStart="@dimen/_12sdp"
+        app:layout_constraintTop_toBottomOf="@id/containerKey"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Switch
+            android:id="@+id/switchButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:switchMinWidth="@dimen/_25sdp"
+            android:textColor="@color/colorBlack"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Include canceled trips"
+            android:textSize="@dimen/_12ssp"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/containerRadioDistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="start"
+        android:layout_marginLeft="@dimen/_10sdp"
+        app:layout_constraintBottom_toTopOf="@id/borderLine2"
+        app:layout_constraintTop_toBottomOf="@id/containerSwitch"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Distance"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:textSize="@dimen/_14ssp"
+            android:gravity="center"
+            />
+
+        <RadioGroup
+            android:id="@+id/distanceRadioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/radioDistanceAny"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_20sdp"
+                android:text="Any"
+                android:checked="false"
+                android:textSize="@dimen/_10ssp" />
+            <RadioButton
+                android:id="@+id/radioLess3"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_20sdp"
+                android:text="Under 3 km"
+                android:checked="false"
+                android:textSize="@dimen/_10ssp" />
+            <RadioButton
+                android:id="@+id/radio3and8"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_20sdp"
+                android:text="3 to 8 km"
+                android:checked="false"
+                android:textSize="@dimen/_10ssp" />
+
+            <RadioButton
+                android:id="@+id/radio8and15"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_20sdp"
+                android:text="8 to 15 km"
+                android:checked="false"
+                android:textSize="@dimen/_10ssp" />
+
+            <RadioButton
+                android:id="@+id/radioMoreThan15"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_20sdp"
+                android:text="More than 15 km"
+                android:checked="false"
+                android:textSize="@dimen/_10ssp" />
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/containerRadioDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="start"
+        android:layout_marginRight="@dimen/_10sdp"
+        app:layout_constraintBottom_toTopOf="@id/borderLine2"
+        app:layout_constraintTop_toBottomOf="@id/containerSwitch"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:textSize="@dimen/_14ssp"
+            android:gravity="center"
+            />
+
+        <RadioGroup
+            android:id="@+id/durationRadioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/radioDurationAny"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_20sdp"
+                android:text="Any"
+                android:checked="false"
+                android:textSize="@dimen/_10ssp" />
+            <RadioButton
+                android:id="@+id/radioLess5mins"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_20sdp"
+                android:text="Under 5 min"
+                android:checked="false"
+                android:textSize="@dimen/_10ssp" />
+            <RadioButton
+                android:id="@+id/radio5and10mins"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_20sdp"
+                android:text="5 to 10 min"
+                android:checked="false"
+                android:textSize="@dimen/_10ssp" />
+
+            <RadioButton
+                android:id="@+id/radio10and20mins"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_20sdp"
+                android:text="10 to 20 min"
+                android:checked="false"
+                android:textSize="@dimen/_10ssp" />
+
+            <RadioButton
+                android:id="@+id/radioMoreThan20mins"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_20sdp"
+                android:text="More than 20 min"
+                android:checked="false"
+                android:textSize="@dimen/_10ssp" />
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/borderLine2"
+        android:orientation="horizontal"
+        android:layout_width="@dimen/_280sdp"
+        android:layout_height="@dimen/_2sdp"
+        android:layout_marginBottom="@dimen/_130sdp"
+        android:background="@color/colorBlack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/buttonMainMap"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:text="SEARCH"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/borderLine2"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
